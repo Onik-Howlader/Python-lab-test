@@ -1,23 +1,17 @@
 #Problem: Convert an image from color (RGB) / 24-bit to binary / 1-bit using OpenCV.
-#===========================================================================
 
 #Solution:
 import cv2
 import numpy as np
 
-# Read the image
 img = cv2.imread("apple.jpg")
 
-# Get the dimensions of the image
 height, width, channels = img.shape
 
-# Create a new image with the same dimensions as the original image
 img_bw = np.zeros((height, width), np.uint8)
 
-# Loop through each pixel in the image
 for i in range(height):
     for j in range(width):
-        # Get the RGB values of the pixel
         b, g, r = img[i, j]
         
         # Convert the RGB values to binary using the formula: Y = 0.299R + 0.587G + 0.114B
